@@ -1,4 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo ====代码静态检查====
+cd packages/vue3-scroll-seamless
 pnpm run lint
