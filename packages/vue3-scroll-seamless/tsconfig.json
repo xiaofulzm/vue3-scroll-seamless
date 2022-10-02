@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "declaration": true, /* 生成相关的 '.d.ts' 文件。 */
+        "declarationDir": "./dist/types", /* '.d.ts' 文件输出目录 */
+        "lib": [ "dom", "es5", "es2015.promise" ,"es2015", "es2017"],
+        "jsx": "preserve",
+        "isolatedModules": true,
+        "noImplicitThis": true
+    },
+    "include": [
+        "./src/**/*.*"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": "true"
+}
