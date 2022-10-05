@@ -2,13 +2,13 @@
     import { reactive } from "vue";
 import seamlessScrollVue from "./components/seamlessScroll.vue";
 
-    const list = reactive([1,2,3,4,5])
+    const list = reactive([1,2,3,4,5,6,7,8])
 
 </script>
 
 <template>
   <div class="demo">
-    <seamlessScrollVue :dataList="list" >
+    <seamlessScrollVue class="scroll-wrap"  :dataList="list" >
         <ul class="ui-wrap"  >
             <li class="li-item" v-for="item of list" >{{item}}</li>
         </ul>
@@ -22,17 +22,24 @@ import seamlessScrollVue from "./components/seamlessScroll.vue";
         display:flex;
         align-items: center;
         justify-content: center;
-        width: 500px;
-        border: 2px solid pink;
+        /* border: 2px solid pink; */
+    }
+    .scroll-wrap{
+        height: 270px;
+        width: 360px;
+        margin: 0 auto;
+        overflow: hidden;
     }
     .ui-wrap{
-        width: 400px;
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
     }
     .li-item{
         margin-bottom: 10px;
         width: 100%;
-        line-height: 30px;
-        border: 2px solid blue;
+        /* line-height: 30px; */
+        /* border: 2px solid blue; */
         text-align: center;
     }
 </style>
