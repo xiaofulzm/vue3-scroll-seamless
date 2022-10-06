@@ -1,14 +1,17 @@
 <script lang="ts" setup>
-import animationFrame from "../utils/animationFrame";
+import {animationFrame,arrayEqual} from "../utils";
 import { 
     onMounted,
     onBeforeMount,
     onBeforeUnmount,
     nextTick,
     watch,
+    watchEffect,
     computed,
     ref,
-    reactive
+    isRef,
+    reactive,
+    isReactive
 } from "vue";
 
 animationFrame()
@@ -55,8 +58,8 @@ const defaultOption =   {
 // 回调事件
 const emit = defineEmits(['ScrollEnd'])
 
-// prosp 参数
-const Prosp = defineProps({
+// Props 参数
+const Props = defineProps({
     dataList:{
         type:Array,
         default:[]
@@ -86,17 +89,15 @@ onBeforeUnmount(() => {
 })
 
 
-
-
 /***
  * 计算属性
  * **/ 
 // 合并传参和默认参数 浅拷贝   *之后重写使用深拷贝
 const options = computed(() => {
-    return {...defaultOption,...Prosp.classOptions}
-}).value;
+    return {...defaultOption,...Props.classOptions}
+});
 // 滚动方向   小于等于1上或下滚动   大于1左或右滚动  
-const isHorizontal = computed(() => options.direction > 1).value;
+const isHorizontal = computed(() => options.value.direction > 1).value;
 // 当左右滚动时  设置float
 
 const float = computed(()=> {
@@ -119,25 +120,26 @@ const pos = computed(()=>{
 
 
 // 手动控制
-const navigation =  computed(() => options.navigation).value;
+const navigation =  computed(() => options.value.navigation).value;
 // 是否开启无缝滚动
 const autoPlay = computed(() => {
     if (navigation) return false
-    return options.autoPlay
+    return options.value.autoPlay
 }); 
 // 判断是否可以开启无缝滚动
-const scrollSwitch = computed(() => Prosp.dataList.length >= options.limitMoveNum).value;
+const scrollSwitch = computed(() => Props.dataList.length >= options.value.limitMoveNum);
+
 //  是否无缝滚动中 
-const hoverStopSwitch = computed(() => options.hoverStop&&autoPlay.value&&scrollSwitch).value;
+const hoverStopSwitch = computed(() => options.value.hoverStop&&autoPlay.value&&scrollSwitch.value);
 
 // 获取当前页面字体大小
-const baseFontSize = computed(() => options.isSingleRemUnit ? parseInt(window.getComputedStyle(document.documentElement, null).fontSize) : 1).value;
-const realSingleStopWidth =  computed(() => options.singleWidth*baseFontSize).value; 
-const realSingleStopHeight =  computed(() => options.singleHeight*baseFontSize).value; 
+const baseFontSize = computed(() => options.value.isSingleRemUnit ? parseInt(window.getComputedStyle(document.documentElement, null).fontSize) : 1).value;
+const realSingleStopWidth =  computed(() => options.value.singleWidth*baseFontSize).value; 
+const realSingleStopHeight =  computed(() => options.value.singleHeight*baseFontSize).value; 
 // 单步滚动
 const step = computed(()=>{
     let singleStep:number;
-    let step = options.step;
+    let step = options.value.step;
     if (isHorizontal) { // 判断上下滚动  还是左右
         singleStep = realSingleStopWidth;
     } else {
@@ -155,15 +157,14 @@ const step = computed(()=>{
 
 
 // 侦听器
-watch(Prosp.dataList, (newValue, oldValue) => {
+watch(()=>Props.dataList,(newValue, oldValue) => {
     _dataWarm(newValue)
         //监听data是否有变更
-    // if (!arrayEqual(newData, oldData)) {
-    //     this.reset()
-    // }
-    reset();
-    console.log(newValue, oldValue)
+    if (!arrayEqual(newValue,oldValue)) {
+        reset()
+    }
 })
+
 // 监听是否可以滚动
 watch(autoPlay, (newBol) => {
     if (newBol) {
@@ -172,7 +173,6 @@ watch(autoPlay, (newBol) => {
         _stopMove()
     }
 })
-
 
 // 重置滚动动画
 function reset(){
@@ -183,11 +183,11 @@ function reset(){
 
 // 鼠标移入
 function changeEnter(){
-    if(hoverStopSwitch) _stopMove();
+    if(hoverStopSwitch.value) _stopMove()
 }
 // 鼠标移出
 function changeLeave(){
-    if(hoverStopSwitch) _startMove();
+    if(hoverStopSwitch.value) _startMove();
 }
 
 //  数据超过100条提示
@@ -200,8 +200,8 @@ function _dataWarm (data:unknown[]) {
  // 初始化滚动 
 async  function _initMove(){
     await nextTick()
-    const { switchDelay } = options;
-    _dataWarm(Prosp.dataList);
+    const { switchDelay } = options.value;
+    _dataWarm(Props.dataList);
     copyHtml.value = "";  // 清空 copyHtml
 
     //  默认是false  ---  true 左右滚动 获取wrap盒子宽高 :  
@@ -226,7 +226,7 @@ async  function _initMove(){
     }
 
     // 是否可以滚动判断
-    if(scrollSwitch){
+    if(scrollSwitch.value){
         let initTimer = null;
         copyHtml.value = slotList.value.innerHTML;
         if (initTimer) clearTimeout(initTimer)
@@ -249,7 +249,7 @@ async  function _initMove(){
     initData.reqFrame = requestAnimationFrame(function(){
         const h = initData.realBoxHeight / 2  //实际显示高度
         const w = initData.realBoxWidth / 2 //宽度
-        let { direction, waitTime } = options;
+        let { direction, waitTime } = options.value;
         // console.log(initData.yPos,initData.xPos)
         if(direction=== 1){  // 上
             if (Math.abs(initData.yPos) >= h) {

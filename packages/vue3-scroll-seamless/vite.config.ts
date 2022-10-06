@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
@@ -24,4 +25,8 @@ export default defineConfig({
       formats: ["es", "umd","iife"],
     },
   },
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+  }
 });

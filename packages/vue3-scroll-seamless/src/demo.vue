@@ -2,15 +2,22 @@
     import { reactive } from "vue";
 import seamlessScrollVue from "./components/seamlessScroll.vue";
 
-    const list = reactive([1,2,3,4,5,6,7,8])
+    let  arr = reactive({list:[1,2,3,4,5,6]})
 
+    setTimeout(()=>{
+        console.log('123')
+        arr.list= [1,2,3,4,5,6,7,8,0]
+    },1000)
+    const classOptions ={
+        limitMoveNum: 6
+    }
 </script>
 
 <template>
   <div class="demo">
-    <seamlessScrollVue class="scroll-wrap"  :dataList="list" >
+    <seamlessScrollVue class="scroll-wrap" :classOptions="classOptions"  :dataList="arr.list" >
         <ul class="ui-wrap"  >
-            <li class="li-item" v-for="item of list" >{{item}}</li>
+            <li class="li-item" v-for="item of arr.list" >{{item}}</li>
         </ul>
     </seamlessScrollVue>
 
