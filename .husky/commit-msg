@@ -1,5 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo ====代码提交验证====
 npx --no -- commitlint --edit "$1"
 
