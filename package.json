@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "node ./scripts/preinstall.js",
-    "prepare": "husky install "
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "luxiaofu",
@@ -16,8 +16,5 @@
     "husky": "^8.0.1",
     "vite": "^3.1.4",
     "vue": "^3.2.40"
-  },
-  "devDependencies": {
-    "husky": "^8.0.0"
   }
 }

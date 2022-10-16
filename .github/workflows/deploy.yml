@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Run Lint
         run: cd packages/vue3-scroll-seamless-docs &&pnpm docs:build
       - name: Deploy
