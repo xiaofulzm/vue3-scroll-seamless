@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "prepare": "husky install packages/vue3-scroll-seamless-docs"
+    "preinstall": "node ./scripts/preinstall.js",
+    "prepare": "husky install "
   },
   "keywords": [],
   "author": "luxiaofu",
