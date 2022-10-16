@@ -8,8 +8,7 @@
     "build": "vite build",
     "test": "vitest",
     "lint": "eslint --fix --ext .ts,.vue src",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.vue\"",
-    "prepare": "husky install"
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.vue\""
   },
   "keywords": [],
   "author": "",
@@ -27,7 +26,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.4.0",
     "happy-dom": "6.0.4",
-    "husky": "^8.0.1",
     "prettier": "^2.7.1",
     "vitest": "0.21.1"
   },
