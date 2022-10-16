@@ -2,7 +2,7 @@
 
 const config = {
     themeConfig:{
-        base:"vue3-scroll-seamless",
+        base:"/vue3-scroll-seamless/",
         title:'lxuiaofu',
         siteTitle: 'vue3-scroll-seamless',
         nav: [
