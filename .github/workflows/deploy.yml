@@ -22,11 +22,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
-      - name: Build
-        run: pnpm docs:build
+        run: pnpm install
+      - name: Run Lint
+        run: cd packages/vue3-scroll-seamless-docs &&pnpm docs:build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: packages/vue3-scroll-seamless-docs/docs/.vitepress/dist
+          publish_dir: docs/.vitepress/dist
