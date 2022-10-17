@@ -2,10 +2,9 @@
 
 const config = {
     base:'/vue3-scroll-seamless/',
-    title:'lxuiaofu',
+    title:'vue3-scroll-seamless',
     siteTitle: 'vue3-scroll-seamless',
     themeConfig:{
-        
         nav: [
             { text: '指南', link: '/guide/' },
             { text: '更新日志', link: '/configs' },

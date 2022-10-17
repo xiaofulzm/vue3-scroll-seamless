@@ -1,17 +1,18 @@
 {
-  "name": "docs",
+  "name": "@packages/vue3-scroll-seamless-docs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vitepress dev docs",
+    "docs:dev": "vitepress dev docs ",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "vitepress": "1.0.0-alpha.19"
+  "dependencies": {
+    "vitepress": "1.0.0-alpha.21",
+    "vue3-scroll-seamless": "workspace:^1.0.0"
   }
 }
