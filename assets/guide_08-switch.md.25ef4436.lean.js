@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as s,a}from"./app.fa63d565.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/08-switch.md"}'),c={name:"guide/08-switch.md"},o=a("p",null,"08 - switch\u63A7\u5236\u5207\u6362",-1),n=[o];function r(i,_,d,p,l,h){return s(),t("div",null,n)}const f=e(c,[["render",r]]);export{u as __pageData,f as default};

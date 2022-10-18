@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,a as s}from"./app.fa63d565.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/01-basic.md"}'),o={name:"guide/01-basic.md"},c=s("p",null,"01-\u9ED8\u8BA4\u914D\u7F6E",-1),n=[c];function r(i,_,d,p,l,m){return a(),t("div",null,n)}const h=e(o,[["render",r]]);export{f as __pageData,h as default};

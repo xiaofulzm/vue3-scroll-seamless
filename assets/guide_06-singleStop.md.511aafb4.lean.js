@@ -1,0 +1,1 @@
+import{_ as e,c as t,o,a as s}from"./app.fa63d565.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/06-singleStop.md"}'),a={name:"guide/06-singleStop.md"},n=s("p",null,"06 - \u5355\u6B65\u505C\u987F",-1),r=[n];function c(i,_,p,d,l,m){return o(),t("div",null,r)}const g=e(a,[["render",c]]);export{f as __pageData,g as default};
