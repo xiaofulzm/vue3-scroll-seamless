@@ -6,7 +6,7 @@ package-lock.json
 .DS_Store
 .spress
 .vercel
-dist
+# dist
 .idea
 /test
 *.zip
