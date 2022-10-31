@@ -1,7 +1,3 @@
-01-默认配置
-
-<Example01from></Example01from>
-```vue
 <script lang="ts" setup>
 import { reactive } from "vue";
 import {vue3ScrollSeamless} from "../../../node_modules/vue3-scroll-seamless/dist/vue3-scroll-seamless.mjs";
@@ -49,14 +45,14 @@ let list = reactive([{
     >
       <ul class="ui-wrap">
         <li class="li-item" v-for="(item,i) of list" :key="i">
-            <p>{{item.title}}</p>
+            <p class="txt" >{{item.title}}</p>
             <span>{{item.date}}</span>
         </li>
       </ul>
     </vue3ScrollSeamless>
   </div>
 </template>
-<style>
+<style scoped >
 .demo {
   display: flex;
   align-items: center;
@@ -65,20 +61,26 @@ let list = reactive([{
 .scroll-wrap {
   height:400px;
   width: 360px;
-  margin: 0 auto;
   overflow: hidden;
 }
 .ui-wrap {
+  display: flex;
+   flex-direction: column;
   list-style: none;
-  padding: 0;
-  margin: 0 auto;
+  margin:0;
+  padding:0;
 }
 .li-item {
+  padding:0;
+  margin-top:0;
   display: flex;
   align-items: center;
   width: 100%;
   text-align: center;
 }
-</style>
 
-```
+.txt{
+    line-height: 100%;
+}
+
+</style>

@@ -1,8 +1,9 @@
 {
   "name": "vue3-scroll-seamless",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/vue3-scroll-seamless.min.js",
+  "homepage": "https://xiaofulzm.github.io/vue3-scroll-seamless/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +11,14 @@
     "lint": "eslint --fix --ext .ts,.vue src",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.vue\""
   },
-  "keywords": [],
+  "keywords": [
+    "vue3",
+    "vuejs",
+    "ui",
+    "components",
+    "Seamless",
+    "scroll"
+],
   "author": "",
   "license": "ISC",
   "devDependencies": {
