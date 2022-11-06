@@ -1,1 +1,0 @@
-import{_ as e,c as s,o as t,b as o}from"./app.60ed1890.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/issuesSolution.md"}'),a={name:"guide/issuesSolution.md"},n=o("p",null,"\u5E38\u89C1issues",-1),i=[n];function r(c,u,_,d,l,p){return t(),s("div",null,i)}const h=e(a,[["render",r]]);export{f as __pageData,h as default};

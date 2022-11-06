@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as s,d as n}from"./app.60ed1890.js";const h=JSON.parse('{"title":"NPM","description":"","frontmatter":{},"headers":[],"relativePath":"guide/index.md"}'),t={name:"guide/index.md"},o=n("",2),c=[o];function r(d,l,p,i,_,m){return s(),a("div",null,c)}const f=e(t,[["render",r]]);export{h as __pageData,f as default};
