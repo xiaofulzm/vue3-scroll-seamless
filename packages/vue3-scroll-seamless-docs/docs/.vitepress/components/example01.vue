@@ -1,33 +1,27 @@
 <script lang="ts" setup>
+
 import { reactive } from "vue";
-import {vue3ScrollSeamless} from "../../../node_modules/vue3-scroll-seamless/dist/vue3-scroll-seamless.mjs";
+import {vue3ScrollSeamless} from "../../../../vue3-scroll-seamless/dist/vue3-scroll-seamless.mjs";
 let list = reactive([{
-          'title': '无缝滚动第一行无缝滚动第一行',
-          'date': '2017-12-16'
+          'title': '水调歌头·明月几时有',
         }, {
-          'title': '无缝滚动第二行无缝滚动第二行',
-          'date': '2017-12-16'
+          'title': '苏轼 〔宋代〕',
         }, {
-          'title': '无缝滚动第三行无缝滚动第三行',
-          'date': '2017-12-16'
+          'title': '明月几时有？把酒问青天。',
         }, {
-          'title': '无缝滚动第四行无缝滚动第四行',
-          'date': '2017-12-16'
+          'title': '不知天上宫阙，今夕是何年。',
         }, {
-          'title': '无缝滚动第五行无缝滚动第五行',
-          'date': '2017-12-16'
+          'title': '我欲乘风归去，又恐琼楼玉宇，高处不胜寒。',
         }, {
-          'title': '无缝滚动第六行无缝滚动第六行',
-          'date': '2017-12-16'
+          'title': '起舞弄清影，何似在人间。',
         }, {
-          'title': '无缝滚动第七行无缝滚动第七行',
-          'date': '2017-12-16'
+          'title': '转朱阁，低绮户，照无眠。',
         }, {
-          'title': '无缝滚动第八行无缝滚动第八行',
-          'date': '2017-12-16'
+          'title': '不应有恨，何事长向别时圆？',
         }, {
-          'title': '无缝滚动第九行无缝滚动第九行',
-          'date': '2017-12-16'
+          'title': '人有悲欢离合，月有阴晴圆缺，此事古难全。',
+        }, {
+          'title': '但愿人长久，千里共婵娟。',
         }]);
 
         const classOptions = {
@@ -45,8 +39,7 @@ let list = reactive([{
     >
       <ul class="ui-wrap">
         <li class="li-item" v-for="(item,i) of list" :key="i">
-            <p class="txt" >{{item.title}}</p>
-            <span>{{item.date}}</span>
+            <p :class="{'tit-txt':i===0}" class="txt" >{{item.title}}</p>
         </li>
       </ul>
     </vue3ScrollSeamless>
@@ -78,9 +71,10 @@ let list = reactive([{
   width: 100%;
   text-align: center;
 }
-
 .txt{
     line-height: 100%;
 }
-
+.tit-txt{
+    font-weight: bold;
+}
 </style>

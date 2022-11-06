@@ -1,9 +1,12 @@
 {
   "name": "vue3-scroll-seamless",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/vue3-scroll-seamless.min.js",
   "homepage": "https://xiaofulzm.github.io/vue3-scroll-seamless/",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

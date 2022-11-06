@@ -55,11 +55,12 @@ importers:
 
   packages/vue3-scroll-seamless-docs:
     specifiers:
+      '@types/node': ^18.11.9
       vitepress: 1.0.0-alpha.21
-      vue3-scroll-seamless: workspace:^1.0.0
     dependencies:
       vitepress: 1.0.0-alpha.21
-      vue3-scroll-seamless: link:../vue3-scroll-seamless
+    devDependencies:
+      '@types/node': 18.11.9
 
 packages:
 
@@ -656,6 +657,10 @@ packages:
 
   /@types/node/14.18.31:
     resolution: {integrity: sha512-vQAnaReSQkEDa8uwAyQby8bYGKu84R/deEc6mg5T8fX6gzCn8QW6rziSgsti1fNvsrswKUKPnVTi7uoB+u62Mw==}
+
+  /@types/node/18.11.9:
+    resolution: {integrity: sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==}
+    dev: true
 
   /@types/node/8.10.66:
     resolution: {integrity: sha512-tktOkFUA4kXx2hhhrB8bIFb5TbwzS4uOhKEmwiD+NoiL0qtP2OQ9mFldbgD4dV1djrlBYP6eBuQZiWjuHUpqFw==}

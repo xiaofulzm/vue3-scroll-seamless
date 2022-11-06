@@ -1,5 +1,5 @@
 {
-  "name": "@packages/vue3-scroll-seamless-docs",
+  "name": "vue3-scroll-seamless-docs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vitepress": "1.0.0-alpha.21",
-    "vue3-scroll-seamless": "workspace:^1.0.0"
+    "vitepress": "1.0.0-alpha.21"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9"
   }
 }
