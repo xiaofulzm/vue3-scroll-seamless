@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as s,d as n}from"./app.ea28f0ac.js";const h=JSON.parse('{"title":"NPM","description":"","frontmatter":{},"headers":[],"relativePath":"guide/index.md"}'),t={name:"guide/index.md"},o=n("",2),c=[o];function r(d,l,p,i,_,m){return s(),a("div",null,c)}const f=e(t,[["render",r]]);export{h as __pageData,f as default};

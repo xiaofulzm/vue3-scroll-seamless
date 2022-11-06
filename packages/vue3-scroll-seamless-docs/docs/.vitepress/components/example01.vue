@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 import { reactive } from "vue";
-import {vue3ScrollSeamless} from "./utils";
+// import {vue3ScrollSeamless} from "./utils";
 let list = reactive([{
           'title': '水调歌头·明月几时有',
         }, {
@@ -32,17 +32,20 @@ let list = reactive([{
 
 <template>
   <div class="demo">
-    <vue3ScrollSeamless
-      class="scroll-wrap"
-      :classOptions="classOptions"
-      :dataList="list"
-    >
-      <ul class="ui-wrap">
-        <li class="li-item" v-for="(item,i) of list" :key="i">
-            <p :class="{'tit-txt':i===0}" class="txt" >{{item.title}}</p>
-        </li>
-      </ul>
-    </vue3ScrollSeamless>
+    <ClientOnly>
+        <vue3ScrollSeamless
+        class="scroll-wrap"
+        :classOptions="classOptions"
+        :dataList="list"
+        >
+        <ul class="ui-wrap">
+            <li class="li-item" v-for="(item,i) of list" :key="i">
+                <p :class="{'tit-txt':i===0}" class="txt" >{{item.title}}</p>
+            </li>
+        </ul>
+        </vue3ScrollSeamless>
+    </ClientOnly>
+
   </div>
 </template>
 <style scoped >
