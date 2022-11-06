@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 import { reactive } from "vue";
-import {vue3ScrollSeamless} from "../../../../vue3-scroll-seamless/dist/vue3-scroll-seamless.mjs";
+import {vue3ScrollSeamless} from "./utils";
 let list = reactive([{
           'title': '水调歌头·明月几时有',
         }, {
