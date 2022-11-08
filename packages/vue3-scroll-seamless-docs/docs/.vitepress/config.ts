@@ -1,7 +1,7 @@
 
 
 const config = {
-    base:'/vue3-scroll-seamless/',
+    // base:'/vue3-scroll-seamless/',
     title:'vue3-scroll-seamless',
     themeConfig:{
         siteTitle: 'vue3-scroll-seamless',
