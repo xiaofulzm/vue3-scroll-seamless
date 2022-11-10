@@ -11,6 +11,10 @@ setTimeout(() => {
 const classOptions = {
   limitMoveNum: 6,
 };
+
+function ScrollEnd() {
+  console.log("234u273");
+}
 </script>
 
 <template>
@@ -19,6 +23,7 @@ const classOptions = {
       class="scroll-wrap"
       :classOptions="classOptions"
       :dataList="arr.list"
+      @ScrollEnd="ScrollEnd"
     >
       <ul class="ui-wrap">
         <li class="li-item" v-for="item of arr.list" :key="item">{{ item }}</li>
