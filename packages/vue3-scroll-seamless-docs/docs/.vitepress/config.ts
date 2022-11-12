@@ -1,7 +1,7 @@
 
 
 const config = {
-    base:'/vue3-scroll-seamless/',
+    // base:'/vue3-scroll-seamless/',
     title:'vue3-scroll-seamless',
     themeConfig:{
         siteTitle: 'vue3-scroll-seamless',
@@ -42,10 +42,10 @@ const config = {
                     { text: '05 - 静止鼠标悬停停止', link: '/guide/05-hoverStop' },
                     { text: '06 - 单步停顿', link: '/guide/06-singleStop' },
                     { text: '07 - 单行停顿时间', link: '/guide/07-singleStopTime' },
-                    { text: '08 - switch控制切换', link: '/guide/08-switch' },
-                    { text: '09 - echart图表无缝滚动', link: '/guide/09-echart' },
-                    { text: '10 - 复杂结构数组属性更新问题', link: '/guide/10-array-property-update' },
-                    { text: '11 - 滚动列表动态追加数据', link: '/guide/11-array-length-update' }
+                    // { text: '08 - switch控制切换', link: '/guide/08-switch' },
+                    { text: '08 - echart图表无缝滚动', link: '/guide/08-echart' },
+                    { text: '09 - 复杂结构数组属性更新问题', link: '/guide/09-array-property-update' },
+                    { text: '10 - 滚动列表动态追加数据', link: '/guide/10-array-length-update' }
                    
                 ]
               }

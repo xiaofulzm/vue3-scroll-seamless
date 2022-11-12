@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 
-import { reactive } from "vue";
+import { reactive,ref,onMounted } from "vue";
 // import {vue3ScrollSeamless} from "./utils";
 
-const props = defineProps(['classOptions'])
+const props = defineProps(['classOptions','isPush'])
+const seamlessScroll = ref(null);
+
 
 let list = reactive([{
           'title': '水调歌头·明月几时有',
@@ -30,6 +32,23 @@ let list = reactive([{
         const classOptions = {
             limitMoveNum: 6,
         };
+    onMounted(()=>{
+        setTimeout(() => {
+            list[3] = {
+            title: '不知天上宫阙，今夕是何年。被更新了。'
+            }
+            list[5] = {
+            title: '起舞弄清影，何似在人间。被更新了。',
+            }
+            const arr = {title: '追加的数据~~~~~~~~~~~~',}
+            if(props.isPush){
+                list.push(arr)
+            }
+            // list length无变化，仅仅是属性变更，手动调用下组件内部的reset方法
+            seamlessScroll.value.reset()
+        }, 2000);
+    })
+
 
 </script>
 
@@ -37,6 +56,7 @@ let list = reactive([{
   <div class="demo">
     <ClientOnly>
         <vue3ScrollSeamless
+        ref="seamlessScroll"
         class="scroll-wrap"
         :classOptions="props.classOptions"
         :dataList="list"
@@ -76,6 +96,15 @@ let list = reactive([{
   align-items: center;
   width: 100%;
   text-align: center;
+}
+.li-item:nth-child(4){
+    color: green;
+}
+.li-item:nth-child(6){
+    color: green;
+}
+.li-item:last-child{
+    color: green;
 }
 .txt{
     line-height: 100%;

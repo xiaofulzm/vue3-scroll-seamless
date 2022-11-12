@@ -1,7 +1,7 @@
-# 06 - 单步停顿
+# 08 - switch控制切换
 
 
-<Example01from :classOptions="{singleHeight: 48}" ></Example01from>
+<Example01from :classOptions="{ singleHeight: 30,waitTime: 3000}" ></Example01from>
 ```vue
 <script lang="ts" setup>
 import { reactive } from "vue";
@@ -30,7 +30,8 @@ let list = reactive([{
         ]);
 
         const classOptions = {
-            singleHeight: 48
+            singleHeight: 30,
+            waitTime: 3000
         };
 
 </script>
