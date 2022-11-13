@@ -1,7 +1,8 @@
 {
   "name": "vue3-scroll-seamless",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple, Seamless scrolling for Vue3.js",
+  "homepage": "https://xiaofulzm.github.io/vue3-scroll-seamless/",
   "main": "index.js",
   "scripts": {
     "preinstall": "node ./scripts/preinstall.js",

@@ -14,7 +14,7 @@ hero:
 
 features:
   - title: "多样化配置支持"
-    details: 目前支持上下左右无缝滚动，单步滚动，以及支持水平方向的手动切换功能。
+    details: 目前支持上下左右无缝滚动，单步滚动。
   - title: 兼容多平台
     details: IE12+、Firefox、Chrome、Safari、iOS、Android。
   - title: 多技术栈版本支持

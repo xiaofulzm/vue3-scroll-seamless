@@ -311,7 +311,6 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-console.log(_sfc_main);
 const entry = {
   install(app) {
     app.component(_sfc_main.name, _sfc_main);
