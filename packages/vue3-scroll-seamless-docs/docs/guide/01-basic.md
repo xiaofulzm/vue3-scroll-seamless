@@ -1,10 +1,11 @@
-01-默认配置
+# 01-默认配置
 
-<Example01from></Example01from>
+
+<Example01from :classOptions="{limitMoveNum: 6}" ></Example01from>
 ```vue
 <script lang="ts" setup>
 import { reactive } from "vue";
-import {vue3ScrollSeamless} from "vue3-scroll-seamless.mjs";
+import {vue3ScrollSeamless} from "vue3-scroll-seamless";
 let list = reactive([{
           'title': '水调歌头·明月几时有',
         }, {

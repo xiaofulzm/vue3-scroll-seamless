@@ -1,9 +1,12 @@
+# 09 - 复杂结构数组属性更新问题
+
+
+<Example03 ></Example03>
+```vue
 <script lang="ts" setup>
-
-import { reactive } from "vue";
-// import {vue3ScrollSeamless} from "./utils";
-
-const props = defineProps(['classOptions'])
+import { reactive,ref,onMounted } from "vue";
+import {vue3ScrollSeamless} from "vue3-scroll-seamless";
+const seamlessScroll = ref(null);
 
 let list = reactive([{
           'title': '水调歌头·明月几时有',
@@ -30,6 +33,20 @@ let list = reactive([{
         const classOptions = {
             limitMoveNum: 6,
         };
+    onMounted(()=>{
+        setTimeout(() => {
+            list[3] = {
+                title: '不知天上宫阙，今夕是何年。被更新了。'
+            }
+            list[5] = {
+                title: '起舞弄清影，何似在人间。被更新了。',
+            }
+            // list.push()
+            // list length无变化，仅仅是属性变更，手动调用下组件内部的reset方法
+            seamlessScroll.value.reset()
+        }, 2000);
+    })
+
 
 </script>
 
@@ -37,6 +54,7 @@ let list = reactive([{
   <div class="demo">
     <ClientOnly>
         <vue3ScrollSeamless
+        ref="seamlessScroll"
         class="scroll-wrap"
         :classOptions="props.classOptions"
         :dataList="list"
@@ -77,6 +95,12 @@ let list = reactive([{
   width: 100%;
   text-align: center;
 }
+.li-item:nth-child(4){
+    color: green;
+}
+.li-item:nth-child(6){
+    color: green;
+}
 .txt{
     line-height: 100%;
 }
@@ -84,3 +108,5 @@ let list = reactive([{
     font-weight: bold;
 }
 </style>
+
+```
