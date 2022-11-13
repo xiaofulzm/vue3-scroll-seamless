@@ -3,12 +3,23 @@
   "version": "1.0.0",
   "description": "A simple, Seamless scrolling for Vue3.js",
   "homepage": "https://xiaofulzm.github.io/vue3-scroll-seamless/",
+  "repository": {
+    "type": "git",
+    "url": "https://xiaofulzm.github.io/vue3-scroll-seamless/"
+  },
   "main": "index.js",
   "scripts": {
     "preinstall": "node ./scripts/preinstall.js",
     "prepare": "husky install"
   },
-  "keywords": [],
+  "keywords": [
+    "vue",
+    "vuejs",
+    "ui",
+    "components",
+    "Seamless",
+    "scroll"
+],
   "author": "luxiaofu",
   "license": "ISC",
   "dependencies": {
