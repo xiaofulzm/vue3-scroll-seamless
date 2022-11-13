@@ -1,0 +1,1 @@
+import{_ as e,c as s,o as t,e as o}from"./app.5de7e3b5.js";const h=JSON.parse('{"title":"\u5E38\u89C1Issues","description":"","frontmatter":{},"headers":[],"relativePath":"guide/issuesSolution.md"}'),c={name:"guide/issuesSolution.md"},a=o("",6),i=[a];function r(d,n,p,_,l,u){return t(),s("div",null,i)}const f=e(c,[["render",r]]);export{h as __pageData,f as default};

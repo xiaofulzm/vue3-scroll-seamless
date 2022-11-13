@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as c,e as o}from"./app.5de7e3b5.js";const m=JSON.parse('{"title":"\u6CE8\u610F\u9879","description":"","frontmatter":{},"headers":[],"relativePath":"guide/notice.md"}'),s={name:"guide/notice.md"},i=o("",3),d=[i];function a(l,p,_,n,r,h){return c(),t("div",null,d)}const f=e(s,[["render",a]]);export{m as __pageData,f as default};
