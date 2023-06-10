@@ -9,5 +9,5 @@ pnpm install vue3-scroll-seamless --save
 ```
 ## Yarn
 ```
-yarn add vue-seamless-scroll
+yarn add vue3-seamless-scroll
 ```
