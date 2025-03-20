@@ -128,6 +128,7 @@ var vue3ScrollSeamless = function(exports, vue) {
       const realSingleStopHeight = vue.computed(
         () => options.value.singleHeight * baseFontSize
       ).value;
+      const gap = vue.ref(1);
       const step = vue.computed(() => {
         let singleStep;
         let step2 = options.value.step;
@@ -204,6 +205,7 @@ var vue3ScrollSeamless = function(exports, vue) {
         if (scrollSwitch.value) {
           let initTimer = null;
           copyHtml.value = slotList.value.innerHTML;
+          gap.value = Math.ceil(realBox.value.offsetHeight / copyHtml.value.clientHeight);
           if (initTimer)
             clearTimeout(initTimer);
           initTimer = setTimeout(() => {
@@ -304,10 +306,13 @@ var vue3ScrollSeamless = function(exports, vue) {
             }, [
               vue.renderSlot(_ctx.$slots, "default")
             ], 4),
-            vue.createElementVNode("div", {
-              style: vue.normalizeStyle(float.value),
-              innerHTML: vue.unref(copyHtml)
-            }, null, 12, _hoisted_1)
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(gap.value, (i) => {
+              return vue.openBlock(), vue.createElementBlock("div", {
+                style: vue.normalizeStyle(float.value),
+                innerHTML: vue.unref(copyHtml),
+                key: i
+              }, null, 12, _hoisted_1);
+            }), 128))
           ], 36)
         ], 512);
       };
