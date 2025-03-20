@@ -1,5 +1,5 @@
 # 组件配置
-## data
+## dataList
 - type: `Array`
 - required: `true`
 ::: tip
