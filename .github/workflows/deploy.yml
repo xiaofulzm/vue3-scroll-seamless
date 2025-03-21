@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
       - name: Run Build
-        run: cd packages/vue3-scroll-seamless-docs&&pnpm docs:build
+        run: cd packages/vue3-scroll-seamless-docs && pnpm i && pnpm docs:build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
