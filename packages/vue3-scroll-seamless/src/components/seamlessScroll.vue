@@ -343,6 +343,10 @@ function _startMove() {
   initData.isHover = false; //开启_move
   _move();
 }
+
+defineExpose({
+  reset
+});
 </script>
 
 <template>
