@@ -45,7 +45,8 @@ const config = {
                     // { text: '08 - switch控制切换', link: '/guide/08-switch' },
                     { text: '08 - echart图表无缝滚动', link: '/guide/08-echart' },
                     { text: '09 - 复杂结构数组属性更新问题', link: '/guide/09-array-property-update' },
-                    { text: '10 - 滚动列表动态追加数据', link: '/guide/10-array-length-update' }
+                    { text: '10 - 滚动列表动态追加数据', link: '/guide/10-array-length-update' },
+                    { text: '11 - 固定高度动态数据', link: '/guide/11-daynamicData' }
                    
                 ]
               }

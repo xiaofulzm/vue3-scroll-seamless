@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vitepress": "1.0.0-alpha.21"
+    "vitepress": "1.0.0-alpha.21",
+    "vue3-scroll-seamless":"../vue3-scroll-seamless"
   },
   "devDependencies": {
     "@types/node": "^18.11.9"

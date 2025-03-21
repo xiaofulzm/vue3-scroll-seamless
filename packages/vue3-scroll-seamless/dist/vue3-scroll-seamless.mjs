@@ -1,4 +1,4 @@
-import { defineComponent, ref, reactive, onBeforeMount, onMounted, onBeforeUnmount, computed, watch, nextTick, openBlock, createElementBlock, createElementVNode, normalizeStyle, unref, renderSlot } from "vue";
+import { defineComponent, ref, reactive, onBeforeMount, onMounted, onBeforeUnmount, computed, watch, nextTick, openBlock, createElementBlock, createElementVNode, normalizeStyle, renderSlot, Fragment, renderList, unref } from "vue";
 function animationFrame() {
   window.cancelAnimationFrame = function() {
     return window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || window.oCancelAnimationFrame || window.msCancelAnimationFrame || function(id) {
@@ -36,8 +36,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     }
   },
   emits: ["ScrollEnd"],
-  setup(__props, { emit }) {
-    const Props = __props;
+  setup(__props, { emit: __emit }) {
     animationFrame();
     const slotList = ref(null);
     const wrap = ref(null);
@@ -72,6 +71,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       switchDisabledClass: "disabled",
       isSingleRemUnit: false
     };
+    const emit = __emit;
+    const Props = __props;
     onBeforeMount(() => {
       initData.ease = "ease-in";
       initData.isHover = false;
@@ -126,6 +127,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const realSingleStopHeight = computed(
       () => options.value.singleHeight * baseFontSize
     ).value;
+    const gap = ref(1);
     const step = computed(() => {
       let singleStep;
       let step2 = options.value.step;
@@ -202,6 +204,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       if (scrollSwitch.value) {
         let initTimer = null;
         copyHtml.value = slotList.value.innerHTML;
+        gap.value = Math.ceil(wrap.value.offsetHeight / slotList.value.offsetHeight)
         if (initTimer)
           clearTimeout(initTimer);
         initTimer = setTimeout(() => {
@@ -293,19 +296,22 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           onMouseleave: changeLeave,
           ref_key: "realBox",
           ref: realBox,
-          style: normalizeStyle(unref(pos))
+          style: normalizeStyle(pos.value)
         }, [
           createElementVNode("div", {
-            style: normalizeStyle(unref(float)),
+            style: normalizeStyle(float.value),
             ref_key: "slotList",
             ref: slotList
           }, [
             renderSlot(_ctx.$slots, "default")
           ], 4),
-          createElementVNode("div", {
-            style: normalizeStyle(unref(float)),
-            innerHTML: unref(copyHtml)
-          }, null, 12, _hoisted_1)
+          (openBlock(true), createElementBlock(Fragment, null, renderList(gap.value, (i) => {
+            return openBlock(), createElementBlock("div", {
+              style: normalizeStyle(float.value),
+              innerHTML: unref(copyHtml),
+              key: i
+            }, null, 12, _hoisted_1);
+          }), 128))
         ], 36)
       ], 512);
     };
