@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2.2.2
+      - uses: pnpm/action-setup@v4
         with:
           version: 7
       - name: Use Node.js ${{ matrix.node-version }}
@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
       - name: Run Build
-        run: cd packages/vue3-scroll-seamless-docs&&pnpm docs:build
+        run: cd packages/vue3-scroll-seamless-docs && pnpm i && pnpm docs:build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
