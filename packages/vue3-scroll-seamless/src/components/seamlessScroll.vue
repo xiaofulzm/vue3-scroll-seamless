@@ -144,6 +144,7 @@ const realSingleStopHeight = computed(
   () => options.value.singleHeight * baseFontSize
 ).value;
 // 单步滚动
+const gap = ref(1) //默认正常循环一次
 const step = computed(() => {
   let singleStep: number;
   let step = options.value.step;
@@ -241,8 +242,10 @@ async function _initMove() {
 
   // 是否可以滚动判断
   if (scrollSwitch.value) {
+
     let initTimer = null;
     copyHtml.value = slotList.value.innerHTML;
+    gap.value = Math.ceil(realBox.value.offsetHeight / copyHtml.value.clientHeight )
     if (initTimer) clearTimeout(initTimer);
     initTimer = setTimeout(() => {
       initData.realBoxHeight = realBox.value.offsetHeight;
@@ -351,7 +354,7 @@ function _startMove() {
       :style="pos"
     >
       <div :style="float" ref="slotList"><slot></slot></div>
-      <div :style="float" v-html="copyHtml"></div>
+      <div :style="float" v-html="copyHtml" v-for="i in gap" :key="i"></div>
     </div>
   </div>
 </template>
