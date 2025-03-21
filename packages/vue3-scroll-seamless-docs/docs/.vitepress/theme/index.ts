@@ -17,6 +17,7 @@ export default {
     // 注册一个全局组件
     app.component('Example01from',Example01from)
     app.component('Example02',Example02)
+    app.component('Example03',Example03)
     app.component('Example04',Example04)
     app.component('vue3ScrollSeamless',vue3ScrollSeamless)
   }
